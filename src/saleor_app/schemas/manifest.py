@@ -40,7 +40,7 @@ class Extension(BaseModel):
     url: Union[AnyHttpUrl, LazyUrl, LazyPath]
 
     class Config:
-        allow_population_by_field_name = True
+        populate_by_name = True
 
 
 class Manifest(BaseModel):
@@ -63,4 +63,4 @@ class Manifest(BaseModel):
     )
 
     class Config:
-        allow_population_by_field_name = True
+        populate_by_name = True
