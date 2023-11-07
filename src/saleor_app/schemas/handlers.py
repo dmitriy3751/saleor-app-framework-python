@@ -119,11 +119,15 @@ class SaleorEventType(str, Enum):
 
 WebHookHandlerSignature = Optional[Callable[[List[Webhook], DomainName], Awaitable]]
 
+# pydantic marks these schemas as:
+# Unable to generate pydantic-core schema for <class 'saleor_app.schemas.handlers.SQSUrl'>. Set
+# `arbitrary_types_allowed=True` in the model_config to ignore this error or implement `__get_pydantic_core_schema__`
+# on your type to fully support it.
 
-class SQSUrl(AnyHttpUrl):
-    allowed_schemes = {"awssqs"}
-
-
-class SQSHandler(BaseModel):
-    target_url: SQSUrl
-    handler: WebHookHandlerSignature
+# class SQSUrl(AnyHttpUrl):
+#     allowed_schemes = {"awssqs"}
+#
+#
+# class SQSHandler(BaseModel):
+#     target_url: SQSUrl
+#     handler: WebHookHandlerSignature
