@@ -4,7 +4,7 @@ from typing import Any, Optional, Union
 
 from pydantic import BaseModel
 from pydantic.fields import Field
-from pydantic.main import Extra
+from pydantic import Extra
 
 
 class WebhookV1(BaseModel):
